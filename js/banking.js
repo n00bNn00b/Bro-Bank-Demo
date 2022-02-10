@@ -34,3 +34,8 @@ document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   withdrawTotal.innerText = withdrawAmount;
   withdrawInput.value = "";
 });
+
+const logout = document.getElementById("logout-btn");
+logout.addEventListener("click", function (e) {
+  window.location.href = "index.html";
+});
