@@ -29,9 +29,23 @@ document.getElementById("deposit-btn").addEventListener("click", function (e) {
 
 document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   const withdrawInput = document.getElementById("withdraw-input");
-  const withdrawAmount = withdrawInput.value;
+  const withdrawText = withdrawInput.value;
+  const newWithdrawAmount = parseFloat(withdrawText);
+  // withdraw total
   const withdrawTotal = document.getElementById("withdraw-total");
-  withdrawTotal.innerText = withdrawAmount;
+  const previousWithdrawText = withdrawTotal.innerText;
+  const previousWithdrawTotal = parseFloat(previousWithdrawText);
+  const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+  withdrawTotal.innerText = newWithdrawTotal;
+
+  // balance update
+  const balanceTotal = document.getElementById("balance-total");
+  const previousBalanceTotalText = balanceTotal.innerText;
+  const previousBalanceTotal = parseFloat(previousBalanceTotalText);
+  const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+  balanceTotal.innerText = newBalanceTotal;
+
+  // clear withdraw
   withdrawInput.value = "";
 });
 
