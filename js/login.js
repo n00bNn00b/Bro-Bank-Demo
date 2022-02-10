@@ -1,14 +1,12 @@
 document.getElementById("login-btn").addEventListener("click", function (e) {
   // email field event
 
-  const userEmail = emailField.value;
   const emailField = document.getElementById("user-email");
-
+  const userEmail = emailField.value;
   //  user pass event
 
-  const userPass = passField.value;
   const passField = document.getElementById("user-password");
-
+  const userPass = passField.value;
   if (userEmail == "admin@demo.com" && userPass == "demopass") {
     window.location.href = "banking.html";
   } else {
